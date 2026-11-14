@@ -9,6 +9,8 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "Work permit filing, visa guidance, residence permits and employer document coordination across Europe." },
       { property: "og:title", content: "Services — DERMAN Visa Support" },
       { property: "og:description", content: "Work permits, visa guidance, residence permits and employer documents across Europe." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Services,

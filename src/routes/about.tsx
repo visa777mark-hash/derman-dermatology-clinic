@@ -8,6 +8,8 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "DERMAN is a private international HR consulting and recruitment coordination agency working since 2010." },
       { property: "og:title", content: "About DERMAN — Since 2010" },
       { property: "og:description", content: "Private international HR consulting and recruitment coordination since 2010." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: About,
