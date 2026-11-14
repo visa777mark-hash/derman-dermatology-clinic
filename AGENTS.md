@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep destination information in one shared browser-safe catalogue consumed by homepage cards and the dynamic country route so processing ranges stay consistent.

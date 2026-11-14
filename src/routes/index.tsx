@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, Globe2, FileCheck2, ShieldCheck, Send, MessagesSquare, FolderSearch, HandCoins, Plane, Check } from "lucide-react";
+import { Award, Globe2, FileCheck2, ShieldCheck, Send, MessagesSquare, FolderSearch, HandCoins, Plane } from "lucide-react";
 import hero from "@/assets/hero-europe.jpg";
 import { WaButton, SubNav, SectionTitle } from "@/components/site";
+import { DestinationCard } from '@/components/destination-card';
+import { destinations } from '@/lib/destinations';
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -10,25 +12,12 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Work permits, residence permits and visa support for 12 European countries. Immigration & Visa Support Center since 2010." },
       { property: "og:title", content: "DERMAN — Europe Work Visas & Job Vacancies" },
       { property: "og:description", content: "Work permits, residence permits and visa support for 12 European countries since 2010." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
-
-const countries = [
-  ["🇵🇱", "Poland", "Work Permit & National D-Visa", "4–8 Weeks", ["Type A work permit filing", "National D-visa guidance", "Manufacturing, logistics, construction"]],
-  ["🇩🇪", "Germany", "Skilled & Shortage Occupation Routes", "6–12 Weeks", ["Qualification recognition support", "Shortage occupation matching", "Employer pre-approval coordination"]],
-  ["🇷🇸", "Serbia", "Work & Residence Permit", "4–6 Weeks", ["Combined permit application", "Employer contract preparation", "Fast-track processing"]],
-  ["🇨🇿", "Czech Republic", "Employee Card & Seasonal Routes", "8–12 Weeks", ["Employee Card filing", "Seasonal work visa routes", "Registered vacancy matching"]],
-  ["🇸🇰", "Slovakia", "National Work & Residence Permit", "6–10 Weeks", ["Labour office confirmation", "Temporary residence filing", "Industrial & automotive sectors"]],
-  ["🇭🇷", "Croatia", "Work & Stay Permit", "4–8 Weeks", ["Combined stay & work permit", "Tourism and construction roles", "Employer document review"]],
-  ["🇱🇹", "Lithuania", "Work Permit & TRP", "6–10 Weeks", ["Work permit coordination", "Temporary residence permit", "Transport & logistics roles"]],
-  ["🇷🇴", "Romania", "Work Authorization & Long-Stay Visa", "6–10 Weeks", ["Work authorization filing", "Long-stay D/AM visa guidance", "Hospitality & construction"]],
-  ["🇭🇺", "Hungary", "Guest Worker & Residence Routes", "6–10 Weeks", ["Guest worker residence permit", "Qualified employer partners", "Manufacturing roles"]],
-  ["🇬🇷", "Greece", "Seasonal & Agricultural Work Visa", "4–8 Weeks", ["Seasonal work visa support", "Agricultural employer matching", "Contract verification"]],
-  ["🇧🇬", "Bulgaria", "Work Permit & D-Visa", "6–10 Weeks", ["Employment agency permit filing", "D-visa document preparation", "Hospitality & industry roles"]],
-  ["🇲🇹", "Malta", "Single Permit Work & Residence", "8–12 Weeks", ["Single permit application", "Employer sponsorship guidance", "Service & healthcare sectors"]],
-] as const;
 
 const why = [
   [Award, "Experience Since 2010", "Long-term expertise in European work permits, residence procedures, and employer document coordination."],
@@ -67,21 +56,8 @@ function Index() {
       <section className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionTitle eyebrow="12 Destinations" title="Current European Work Visa & Employment Destinations" />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {countries.map(([flag, name, type, time, pts]) => (
-              <article key={name} className="card-brand flex flex-col p-6">
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl leading-none">{flag}</span>
-                  <h3 className="text-lg font-bold">{name}</h3>
-                </div>
-                <p className="mt-3 text-sm font-medium text-royal">{type}</p>
-                <span className="mt-3 w-fit rounded-md border border-crimson/30 bg-crimson/5 px-2.5 py-1 text-xs font-bold text-crimson">⏱ {time}</span>
-                <ul className="mt-4 flex-1 space-y-2 text-sm text-muted-foreground">
-                  {pts.map((p) => (<li key={p} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-royal" />{p}</li>))}
-                </ul>
-                <div className="mt-5"><WaButton size="sm" variant="outline">Inquire on WhatsApp</WaButton></div>
-              </article>
-            ))}
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+            {destinations.map(destination => <DestinationCard key={destination.slug} destination={destination} />)}
           </div>
         </div>
       </section>

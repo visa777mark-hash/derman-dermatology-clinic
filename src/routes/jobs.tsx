@@ -9,6 +9,8 @@ export const Route = createFileRoute("/jobs")({
       { name: "description", content: "Current job vacancies with European employers in construction, logistics, manufacturing, hospitality and agriculture." },
       { property: "og:title", content: "Jobs in Europe — DERMAN Vacancies" },
       { property: "og:description", content: "Current European job vacancies with work permit support." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Jobs,
