@@ -1,15 +1,15 @@
-import poland from '@/assets/destinations/poland.jpg.asset.json';
-import czech from '@/assets/destinations/czech-republic.jpg.asset.json';
-import slovakia from '@/assets/destinations/slovakia.jpg';
-import ukraine from '@/assets/destinations/ukraine.jpg';
-import albania from '@/assets/destinations/albania.jpg.asset.json';
-import serbia from '@/assets/destinations/serbia.jpg.asset.json';
-import macedonia from '@/assets/destinations/north-macedonia.jpg';
-import belarus from '@/assets/destinations/belarus.jpg';
-import germany from '@/assets/destinations/germany.jpg';
-import france from '@/assets/destinations/france.jpg.asset.json';
-import spain from '@/assets/destinations/spain.jpg';
-import greece from '@/assets/destinations/greece.jpg.asset.json';
+const poland = { url: '/images/destinations/poland.jpg' };
+const czech = { url: '/images/destinations/czech-republic.jpg' };
+const slovakia = '/images/destinations/slovakia.jpg';
+const ukraine = '/images/destinations/ukraine.jpg';
+const albania = { url: '/images/destinations/albania.jpg' };
+const serbia = { url: '/images/destinations/serbia.jpg' };
+const macedonia = '/images/destinations/north-macedonia.jpg';
+const belarus = '/images/destinations/belarus.jpg';
+const germany = '/images/destinations/germany.jpg';
+const france = { url: '/images/destinations/france.jpg' };
+const spain = '/images/destinations/spain.jpg';
+const greece = { url: '/images/destinations/greece.jpg' };
 
 export const destinations = [
   { slug: 'poland', name: 'Poland', route: 'Work Permit & National D-Visa', days: [30, 45], image: poland.url, landmark: 'Palace of Culture and Science skyline, Warsaw', points: ['Work permit document coordination', 'National D-visa guidance', 'Employer contract preparation'] },
