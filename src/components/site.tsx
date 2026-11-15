@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import logo from "@/assets/derman-logo.png.asset.json";
 
 export const WA = "https://wa.me/380933946713";
 
@@ -31,7 +30,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="min-w-0">
-          <img src={logo.url} alt="DERMAN" className="h-8 w-auto sm:h-10" />
+          <img src="/images/derman-logo.png" alt="DERMAN" className="h-8 w-auto sm:h-10" />
           <p className="mt-1 truncate text-[11px] font-medium leading-tight text-muted-foreground">Immigration & Visa Support Center</p>
           <p className="truncate text-[11px] leading-tight text-muted-foreground">Working since 2010</p>
         </Link>
@@ -48,7 +47,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <img src={logo.url} alt="DERMAN" className="h-9 w-auto" loading="lazy" />
+            <img src="/images/derman-logo.png" alt="DERMAN" className="h-9 w-auto" loading="lazy" />
             <p className="mt-2 text-sm text-muted-foreground">Immigration & Visa Support Center · hrderman.com</p>
           </div>
           <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-primary hover:text-royal">
