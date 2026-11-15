@@ -30,3 +30,4 @@ use the editor.
 <!-- LOVABLE:END -->
 
 - Keep destination information in one shared browser-safe catalogue consumed by homepage cards and the dynamic country route so processing ranges stay consistent.
+- Serve the site logo and destination photographs from root-relative paths under public/images so deployment does not depend on asset proxy endpoints; keep photo attribution alongside the local files.
