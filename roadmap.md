@@ -4,5 +4,5 @@
 - [x] Add country placeholder pages and verify all twelve links and desktop/mobile layouts; fourteen tests passed.
 
 # Production image repair
-- [ ] Store the uploaded logo and twelve architectural photographs under public/images with root-relative references.
-- [ ] Verify all image responses and homepage rendering at desktop and mobile sizes.
+- [x] Store the uploaded logo and twelve architectural photographs under public/images with root-relative references.
+- [x] Verify all image responses and homepage rendering at desktop and mobile sizes; all fifteen homepage images loaded, no browser errors, fourteen tests passed.
