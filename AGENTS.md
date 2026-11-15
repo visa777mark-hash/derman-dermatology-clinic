@@ -30,4 +30,5 @@ use the editor.
 <!-- LOVABLE:END -->
 
 - Keep destination information in one shared browser-safe catalogue consumed by homepage cards and the dynamic country route so processing ranges stay consistent.
+- Services guides consume the shared destination catalogue for names and timeframes, with country-specific explanatory text and structured milestone terms in a browser-safe service guide module to avoid duplicating operational values.
 - Serve the site logo and destination photographs from root-relative paths under public/images so deployment does not depend on asset proxy endpoints; keep photo attribution alongside the local files.
