@@ -61,12 +61,12 @@ function LeadershipCard({ leader, index }: { leader: typeof leaders[number]; ind
       <div className="mt-4 min-h-10 text-xs text-muted-foreground">
         {leader.location && <p className="flex items-start gap-1.5"><MapPin className="h-4 w-4 shrink-0" />{leader.location}</p>}
       </div>
-      <div className="mt-auto flex items-center gap-2 rounded-md border border-border bg-surface p-2.5">
+      <div className="mt-auto flex items-center gap-2 rounded-md border border-border bg-surface p-2.5 md:flex-wrap lg:flex-nowrap">
         <Phone className="h-4 w-4 shrink-0 text-royal" />
-        <a href={`tel:${leader.phone.replaceAll(" ", "")}`} className="min-w-0 flex-1 whitespace-nowrap text-sm font-semibold text-primary hover:underline">{leader.phone}</a>
+        <a href={`tel:${leader.phone.replaceAll(" ", "")}`} className="min-w-0 flex-1 whitespace-nowrap text-sm font-semibold text-primary hover:underline md:order-first md:basis-full lg:order-none lg:basis-auto">{leader.phone}</a>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button size="icon" variant="ghost" className="h-8 w-8 shrink-0" aria-label={`Copy ${leader.name}'s phone number`} onClick={copyPhone}>
+            <Button size="icon" variant="ghost" className="h-8 w-8 shrink-0 md:ml-auto lg:ml-0" aria-label={`Copy ${leader.name}'s phone number`} onClick={copyPhone}>
               {copyState === "copied" ? <Check /> : <Copy />}
             </Button>
           </TooltipTrigger>
