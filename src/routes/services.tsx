@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, FileText, Stamp, Home, Users, ShieldCheck, Clock3, Check } from "lucide-react";
 import { WA, WhatsAppIcon } from "@/components/site";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { destinations, processingTime } from "@/lib/destinations";
 import { countryGuides, partnershipMilestones } from "@/lib/service-guides";
 
@@ -27,6 +28,29 @@ const services = [
   [Stamp, "National D-Visa Embassy Documentation", "Invitation letters, employment contracts, insurance documentation and application preparation for the relevant embassy checklist."],
   [Home, "Temporary Residence Permit (TRP) Guidance", "Post-arrival registration and biometrics support, with guidance on the applicable temporary residence documentation."],
   [Users, "B2B International Agency Partnerships", "Dedicated quota allocation coordination and standardized 50/50 milestone terms for international recruitment partners."],
+] as const;
+
+const filingChannels = {
+  poland: 'Polish consulate / designated visa centre',
+  'czech-republic': 'Czech embassy appointment channel',
+  slovakia: 'Slovak consulate / residence authority',
+  ukraine: 'Ukrainian mission / residence authority',
+  albania: 'Official permit portal / Albanian mission',
+  serbia: 'Official single-permit portal / Serbian mission',
+  'north-macedonia': 'Competent mission / residence authority',
+  belarus: 'Belarusian consulate / residence authority',
+  germany: 'German mission / designated visa channel',
+  france: 'France-Visas / designated submission centre',
+  spain: 'Spanish consulate / designated visa centre',
+  greece: 'Greek consulate / designated visa centre',
+} as const;
+
+const applicantRegions = [
+  ['South Asia', 'India, Bangladesh, Nepal, Sri Lanka, Pakistan'],
+  ['Africa', 'Ghana, Nigeria, Kenya, Cameroon, Uganda'],
+  ['Southeast & East Asia', 'Vietnam, Philippines, Thailand'],
+  ['Central Asia', 'Uzbekistan, Kazakhstan, Kyrgyzstan, Tajikistan'],
+  ['Middle East', 'UAE, Saudi Arabia, Qatar, Kuwait'],
 ] as const;
 
 function Services() {
@@ -79,20 +103,19 @@ function Services() {
             {destinations.map(destination => {
               const guide = countryGuides[destination.slug];
               return <article key={destination.slug} aria-label={`${destination.name} application guide`} className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-border bg-card">
-                <img src={destination.image} alt={destination.landmark} loading="lazy" width={1600} height={900} className="aspect-[16/9] w-full object-cover" />
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <h3 className="text-2xl font-bold tracking-normal">{destination.name}</h3>
                     <span className="inline-flex items-center gap-2 rounded-md border border-crimson/25 bg-crimson/5 px-3 py-1.5 text-sm font-bold text-crimson"><Clock3 className="h-4 w-4" />{processingTime(destination.days)}</span>
                   </div>
-                  <p className="mt-4 text-sm font-bold leading-relaxed text-royal">{guide.permit}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{guide.guidance}</p>
-                  <h4 className="mt-6 text-sm font-bold tracking-normal">Required Baseline Documents</h4>
-                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
-                    {['Valid passport', 'CV / employment history', 'Clean police clearance, where applicable'].map(document => <li key={document} className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-royal" />{document}</li>)}
+                  <p className="mt-3 text-sm font-bold leading-relaxed text-royal">{destination.route}</p>
+                  <ul className="mb-7 mt-5 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                    {[
+                      ['Permit', guide.permit],
+                      ['Core docs', 'Valid passport, CV; clean police clearance where applicable'],
+                      ['Filing', filingChannels[destination.slug]],
+                    ].map(([label, detail]) => <li key={label} className="flex items-start gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-royal" /><span><strong className="font-semibold text-foreground">{label}:</strong> {detail}</span></li>)}
                   </ul>
-                  <h4 className="mt-6 border-t border-border pt-5 text-sm font-bold tracking-normal">Global Applicant &amp; Embassy Submission Notes</h4>
-                  <p className="mb-6 mt-3 text-sm leading-relaxed text-muted-foreground">{guide.submission} Applicants from South Asia (India, Bangladesh, Nepal, Sri Lanka, Pakistan), Southeast &amp; East Asia (Vietnam, Philippines, Thailand), Central Asia (Uzbekistan, Kazakhstan, Kyrgyzstan, Tajikistan), Africa (Ghana, Nigeria, Kenya, Cameroon, Uganda), and the Middle East (UAE, Saudi Arabia, Qatar, Kuwait) should verify consular jurisdiction based on nationality and lawful residence. Obtain certified translations and consular legalization or an apostille only as required by the destination and document type. Submit through VFS only where officially appointed for that country and visa category; otherwise follow the embassy’s designated filing procedure. These regions do not imply automatic eligibility or appointment access.</p>
                   <Button asChild size="lg" className="mt-auto h-12 w-full font-semibold hover:bg-royal">
                     <a href={WA} target="_blank" rel="noopener noreferrer" aria-label={`Inquire on WhatsApp about ${destination.name}`}><WhatsAppIcon />Inquire on WhatsApp</a>
                   </Button>
@@ -100,6 +123,29 @@ function Services() {
               </article>;
             })}
           </div>
+        </div>
+      </section>
+      <section aria-labelledby="applicant-regions-title" className="border-t border-border bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+          <h2 id="applicant-regions-title" className="text-2xl font-bold tracking-normal sm:text-3xl">Global Applicant Regions &amp; Consular Support</h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {applicantRegions.map(([region, countries]) => <div key={region} className="min-w-0 rounded-lg border border-border bg-surface px-5 py-4">
+              <h3 className="text-sm font-bold tracking-normal text-royal">{region}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{countries}</p>
+            </div>)}
+          </div>
+          <Accordion type="single" collapsible className="mt-7 border-t border-border">
+            <AccordionItem value="consular-notes">
+              <AccordionTrigger className="gap-4 py-5 text-base font-semibold text-primary">View Embassy &amp; VFS Legalization Notes</AccordionTrigger>
+              <AccordionContent forceMount className="max-w-4xl" data-consular-notes="true">
+                <div className="space-y-3 leading-relaxed text-muted-foreground">
+                  <p><strong className="font-semibold text-foreground">Embassy jurisdiction &amp; filing.</strong> Applicants across the regions above should confirm the competent embassy based on nationality and lawful residence, the current permit-specific checklist and appointment availability. Use VFS only where officially appointed for the destination and visa category; otherwise use the embassy’s designated filing channel or official permit portal.</p>
+                  <p><strong className="font-semibold text-foreground">Apostille &amp; consular legalization.</strong> Obtain certified translations and an apostille or consular legalization only when required for the destination and document type. Confirm certificate validity periods and authentication requirements before submitting police clearance or other official records.</p>
+                  <p><strong className="font-semibold text-foreground">Individual eligibility.</strong> Additional employer approvals, qualifications, insurance or accommodation evidence may be required. Regional coverage does not imply automatic eligibility or appointment access; permit and visa decisions remain with the competent authorities.</p>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
     </>
