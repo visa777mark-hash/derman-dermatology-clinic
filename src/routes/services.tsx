@@ -135,7 +135,7 @@ function Services() {
             </div>)}
           </div>
           <Accordion type="single" collapsible className="mt-7 border-t border-border">
-            <AccordionItem value="consular-notes">
+            <AccordionItem value="consular-notes" className="[&_[data-consular-notes][data-state=closed]]:hidden">
               <AccordionTrigger className="gap-4 py-5 text-base font-semibold text-primary">View Embassy &amp; VFS Legalization Notes</AccordionTrigger>
               <AccordionContent forceMount className="max-w-4xl" data-consular-notes="true">
                 <div className="space-y-3 leading-relaxed text-muted-foreground">
