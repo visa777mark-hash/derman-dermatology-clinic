@@ -21,3 +21,6 @@
 - [x] Replace the overview with the supplied summary and seven corporate milestones.
 - [x] Add three leadership cards with direct phone contacts and copy controls; update navigation and metadata.
 - [x] Verify all three copied contacts, both home links, metadata, and desktop/mobile/tablet presentation; seventeen tests passed with no page errors.
+# SEO title and description update
+- [x] Set the site title to "DERMAN | Europe Work Permit, Work Visa & Job Vacancy" and the meta description to the four-keyword sentence on the root and homepage.
+- [x] Replace the homepage sub-headline intro sentence with the same keyword sentence; verify served HTML, tests and build; seventeen tests passed, build OK.

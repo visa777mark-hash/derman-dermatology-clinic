@@ -8,10 +8,10 @@ import { destinations } from '@/lib/destinations';
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DERMAN — Europe Work Visas & Job Vacancies" },
-      { name: "description", content: "Work permits, residence permits and visa support for 12 European countries. Immigration & Visa Support Center since 2010." },
-      { property: "og:title", content: "DERMAN — Europe Work Visas & Job Vacancies" },
-      { property: "og:description", content: "Work permits, residence permits and visa support for 12 European countries since 2010." },
+      { title: "DERMAN | Europe Work Permit, Work Visa & Job Vacancy" },
+      { name: "description", content: "DERMAN provides verified job vacancy opportunities, official work permit sponsorship, and work visa document coordination across Europe." },
+      { property: "og:title", content: "DERMAN | Europe Work Permit, Work Visa & Job Vacancy" },
+      { property: "og:description", content: "DERMAN provides verified job vacancy opportunities, official work permit sponsorship, and work visa document coordination across Europe." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -46,7 +46,7 @@ function Index() {
             <p className="mt-5 text-base font-semibold text-royal sm:text-lg">
               Residence Permit in Europe <span className="text-crimson">|</span> Visa Support <span className="text-crimson">|</span> Employer Documents
             </p>
-            <p className="mt-2 text-muted-foreground">For Global Applicants & International Partners</p>
+            <p className="mt-2 text-muted-foreground">DERMAN provides verified job vacancy opportunities, official work permit sponsorship, and work visa document coordination across Europe.</p>
             <div className="mt-8"><WaButton size="lg">Contact Us on WhatsApp</WaButton></div>
           </div>
           <div className="mt-14"><SubNav /></div>
