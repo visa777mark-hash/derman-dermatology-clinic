@@ -13,6 +13,6 @@
 - [x] Verify milestone rules, navigation and desktop/mobile page rendering; seventeen tests passed, all photos loaded and no runtime errors or horizontal overflow.
 
 # Services page cleanup
-- [ ] Simplify all twelve cards to country, route, timeframe, three bullets and WhatsApp.
-- [ ] Consolidate applicant keywords into five regional tags and indexed expandable consular notes.
-- [ ] Verify the accordion and desktop/mobile layouts while preserving existing terms and metadata.
+- [x] Simplify all twelve cards to country, route, timeframe, three bullets and WhatsApp.
+- [x] Consolidate applicant keywords into five regional tags and indexed expandable consular notes.
+- [x] Verify the accordion with mouse and keyboard and desktop/mobile layouts while preserving existing terms and metadata; seventeen tests passed.
