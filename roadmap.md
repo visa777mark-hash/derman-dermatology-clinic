@@ -11,3 +11,8 @@
 - [x] Update the existing Services page with four services, 50/50 terms and responsibility notice.
 - [x] Add twelve country guides with shared timeframes, applicant regions and WhatsApp links; update page metadata.
 - [x] Verify milestone rules, navigation and desktop/mobile page rendering; seventeen tests passed, all photos loaded and no runtime errors or horizontal overflow.
+
+# Services page cleanup
+- [x] Simplify all twelve cards to country, route, timeframe, three bullets and WhatsApp.
+- [x] Consolidate applicant keywords into five regional tags and indexed expandable consular notes.
+- [x] Verify the accordion with mouse and keyboard and desktop/mobile layouts while preserving existing terms and metadata; seventeen tests passed.
