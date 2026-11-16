@@ -16,3 +16,8 @@
 - [x] Simplify all twelve cards to country, route, timeframe, three bullets and WhatsApp.
 - [x] Consolidate applicant keywords into five regional tags and indexed expandable consular notes.
 - [x] Verify the accordion with mouse and keyboard and desktop/mobile layouts while preserving existing terms and metadata; seventeen tests passed.
+
+# About page update
+- [x] Replace the overview with the supplied summary and seven corporate milestones.
+- [x] Add three leadership cards with direct phone contacts and copy controls; update navigation and metadata.
+- [x] Verify all three copied contacts, both home links, metadata, and desktop/mobile/tablet presentation; seventeen tests passed with no page errors.
