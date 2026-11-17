@@ -14,4 +14,13 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("keeps the four public pages and removes individual destination routes", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    for (const path of ["/", "/services", "/jobs", "/about"]) {
+      expect(router.matchRoutes(path).at(-1)?.routeId).not.toBe(rootRouteId);
+    }
+    expect(router.matchRoutes("/destinations/poland").some((match) => match.routeId === "/destinations/$country")).toBe(false);
+  });
 });
