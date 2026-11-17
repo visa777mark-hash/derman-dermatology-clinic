@@ -21,6 +21,7 @@ describe("App routing", () => {
     for (const path of ["/", "/services", "/jobs", "/about"]) {
       expect(router.matchRoutes(path).at(-1)?.routeId).not.toBe(rootRouteId);
     }
-    expect(router.matchRoutes("/destinations/poland").some((match) => match.routeId === "/destinations/$country")).toBe(false);
+    const destinationRouteIds: string[] = router.matchRoutes("/destinations/poland").map((match) => match.routeId);
+    expect(destinationRouteIds).not.toContain("/destinations/$country");
   });
 });
