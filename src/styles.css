@@ -67,6 +67,18 @@
   --color-royal: var(--royal);
   --color-crimson: var(--crimson);
   --color-crimson-foreground: var(--crimson-foreground);
+  --color-sector-logistics: var(--sector-logistics);
+  --color-sector-logistics-foreground: var(--sector-logistics-foreground);
+  --color-sector-manufacturing: var(--sector-manufacturing);
+  --color-sector-manufacturing-foreground: var(--sector-manufacturing-foreground);
+  --color-sector-construction: var(--sector-construction);
+  --color-sector-construction-foreground: var(--sector-construction-foreground);
+  --color-sector-hospitality: var(--sector-hospitality);
+  --color-sector-hospitality-foreground: var(--sector-hospitality-foreground);
+  --color-sector-agriculture: var(--sector-agriculture);
+  --color-sector-agriculture-foreground: var(--sector-agriculture-foreground);
+  --color-sector-technical: var(--sector-technical);
+  --color-sector-technical-foreground: var(--sector-technical-foreground);
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --color-sidebar: var(--sidebar);
@@ -86,6 +98,18 @@
   --royal: oklch(0.49 0.22 264);
   --crimson: oklch(0.52 0.2 22);
   --crimson-foreground: oklch(1 0 0);
+  --sector-logistics: oklch(0.95 0.025 250);
+  --sector-logistics-foreground: oklch(0.49 0.22 264);
+  --sector-manufacturing: oklch(0.95 0.025 285);
+  --sector-manufacturing-foreground: oklch(0.46 0.2 278);
+  --sector-construction: oklch(0.96 0.04 85);
+  --sector-construction-foreground: oklch(0.5 0.14 65);
+  --sector-hospitality: oklch(0.96 0.025 5);
+  --sector-hospitality-foreground: oklch(0.52 0.18 10);
+  --sector-agriculture: oklch(0.95 0.035 155);
+  --sector-agriculture-foreground: oklch(0.46 0.12 155);
+  --sector-technical: oklch(0.95 0.012 255);
+  --sector-technical-foreground: oklch(0.52 0.2 22);
   --gradient-brand: linear-gradient(90deg, var(--royal), var(--crimson));
   --shadow-card: 0 1px 2px oklch(0.31 0.11 262 / 6%), 0 8px 24px -12px oklch(0.31 0.11 262 / 18%);
   --background: oklch(1 0 0);
@@ -155,6 +179,18 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --sector-logistics: oklch(0.28 0.05 260);
+  --sector-logistics-foreground: oklch(0.85 0.08 250);
+  --sector-manufacturing: oklch(0.28 0.05 285);
+  --sector-manufacturing-foreground: oklch(0.84 0.08 285);
+  --sector-construction: oklch(0.3 0.045 75);
+  --sector-construction-foreground: oklch(0.86 0.12 85);
+  --sector-hospitality: oklch(0.29 0.045 10);
+  --sector-hospitality-foreground: oklch(0.85 0.08 10);
+  --sector-agriculture: oklch(0.28 0.04 155);
+  --sector-agriculture-foreground: oklch(0.84 0.1 155);
+  --sector-technical: oklch(0.27 0.02 255);
+  --sector-technical-foreground: oklch(0.78 0.12 22);
 }
 
 @layer base {
