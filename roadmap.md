@@ -24,3 +24,8 @@
 # SEO title and description update
 - [x] Set the site title to "DERMAN | Europe Work Permit, Work Visa & Job Vacancy" and the meta description to the four-keyword sentence on the root and homepage.
 - [x] Replace the homepage sub-headline intro sentence with the same keyword sentence; verify served HTML, tests and build; seventeen tests passed, build OK.
+
+# Jobs page and internal linking
+- [ ] Build the Jobs hero, search and category filters, fifty tailored vacancy accordions, and regional coverage.
+- [ ] Point all twelve homepage destination cards to Jobs and remove the unused country route and references.
+- [ ] Add EmploymentAgency structured data and Jobs metadata; verify filters, accordions, links, layouts, tests, and build.
