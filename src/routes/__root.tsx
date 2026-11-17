@@ -90,6 +90,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
           ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EmploymentAgency",
+          name: "DERMAN Immigration & Visa Support Center",
+          url: "https://hrderman.com",
+          foundingDate: "2010",
+          description: "International recruitment and European work permit coordination for applicants and employer partners.",
+          areaServed: "Europe",
+          location: [
+            {
+              "@type": "Place",
+              name: "DERMAN Bielefeld Coordination Center",
+              address: { "@type": "PostalAddress", addressLocality: "Bielefeld", addressCountry: "DE" },
+            },
+            {
+              "@type": "Place",
+              name: "DERMAN Kyiv Coordination Center",
+              address: { "@type": "PostalAddress", addressLocality: "Kyiv", addressCountry: "UA" },
+            },
+          ],
+        }),
+      },
+    ],
     links: [
       {
         rel: "stylesheet",

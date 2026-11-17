@@ -17,7 +17,7 @@ export function DestinationCard({ destination }: { destination: (typeof destinat
           {destination.points.map(point => <li key={point} className="flex gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-royal" />{point}</li>)}
         </ul>
         <Button asChild size="lg" className="h-12 w-full justify-between px-5 font-semibold hover:bg-royal">
-          <Link to="/destinations/$country" params={{ country: destination.slug }} aria-label={`View Details for ${destination.name}`}>View Details <ArrowRight /></Link>
+          <Link to="/jobs" aria-label={`View Open Jobs for ${destination.name}`}>View Open Jobs <ArrowRight /></Link>
         </Button>
       </div>
     </article>
