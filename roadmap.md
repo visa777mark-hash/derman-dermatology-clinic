@@ -29,3 +29,8 @@
 - [x] Build the Jobs hero, search and category filters, fifty tailored vacancy accordions, and regional coverage.
 - [x] Point all twelve homepage destination cards to Jobs and remove the unused country route and references.
 - [x] Add EmploymentAgency structured data and Jobs metadata; verify filters, accordions, links, layouts, tests, and build; twenty-four tests passed with no browser errors or mobile overflow.
+
+# Jobs visual scannability
+- [x] Add six clickable industry cards with distinct icons and accurate role counts above search.
+- [x] Add sector badges, country previews, and View Brief pills to all fifty accordion rows plus regional icons.
+- [x] Verify all filtering and accordion behavior, desktop/mobile layouts, existing tests, and build without changing job data or SEO copy; twenty-four tests passed with no browser errors or overflow.

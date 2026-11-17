@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { JobCategoryIcon } from "@/components/job-category-icon";
 import { WA, WhatsAppIcon } from "@/components/site";
 import { eligibleApplicantNationalities, type JobVacancy } from "@/lib/jobs";
 
@@ -14,7 +15,7 @@ function permitDestinationText(job: JobVacancy) {
 export function JobAccordion({ jobs }: { jobs: readonly JobVacancy[] }) {
   return (
     <Accordion type="multiple" className="space-y-3">
-      {jobs.map((job, index) => {
+      {jobs.map((job) => {
         const brief = [
           ["Working Hours", job.hours],
           ["Experience & Requirements", job.experience],
@@ -23,6 +24,7 @@ export function JobAccordion({ jobs }: { jobs: readonly JobVacancy[] }) {
           ["Eligible Applicant Nationalities", eligibleApplicantNationalities],
         ] as const;
         const whatsappUrl = `${WA}?text=${encodeURIComponent(`Hello DERMAN, I would like to inquire about the ${job.title} role.`)}`;
+        const countryPreview = job.destinations.slice(0, 3).map((country) => country === "Czech Republic" ? "Czechia" : country).join(" • ");
 
         return (
           <AccordionItem
@@ -30,12 +32,20 @@ export function JobAccordion({ jobs }: { jobs: readonly JobVacancy[] }) {
             value={job.id}
             className="overflow-hidden rounded-lg border border-border bg-card shadow-sm [&_[data-job-brief][data-state=closed]]:hidden"
           >
-            <AccordionTrigger className="gap-4 px-5 py-5 hover:bg-surface hover:no-underline sm:px-6">
-              <span className="flex min-w-0 flex-1 items-start gap-3 sm:items-center sm:gap-4">
-                <span className="mt-0.5 shrink-0 font-display text-sm font-bold text-crimson sm:mt-0">{String(index + 1).padStart(2, "0")}</span>
-                <span className="min-w-0">
-                  <span className="block font-display text-base font-bold leading-snug text-navy sm:text-lg">{job.title}</span>
-                  <span className="mt-1.5 inline-flex rounded-full bg-royal/10 px-2.5 py-1 text-xs font-semibold text-royal">{job.category}</span>
+            <AccordionTrigger className="group gap-3 px-4 py-4 hover:bg-surface hover:no-underline sm:gap-4 sm:px-5 sm:py-5">
+              <span className="flex min-w-0 flex-1 flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <span className="flex min-w-0 items-center gap-3 sm:gap-4">
+                  <JobCategoryIcon category={job.category} />
+                  <span className="min-w-0">
+                    <span className="block font-display text-base font-bold leading-snug text-navy sm:text-lg">{job.title}</span>
+                    <span className="mt-1.5 inline-flex rounded-full bg-royal/10 px-2.5 py-1 text-xs font-semibold text-royal">{job.category}</span>
+                  </span>
+                </span>
+                <span className="flex shrink-0 flex-wrap items-center gap-2 md:justify-end">
+                  <span className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-medium text-muted-foreground">
+                    <MapPin className="h-3.5 w-3.5 shrink-0 text-crimson" />{countryPreview}
+                  </span>
+                  <span className="inline-flex rounded-full bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground transition-colors group-hover:bg-royal">View Brief</span>
                 </span>
               </span>
             </AccordionTrigger>

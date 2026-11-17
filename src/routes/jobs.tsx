@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Search, SearchX } from "lucide-react";
+import { ArrowRight, Globe2, Search, SearchX } from "lucide-react";
 import { JobAccordion } from "@/components/job-accordion";
+import { JobCategoryIcon } from "@/components/job-category-icon";
 import { PageHero, SectionTitle } from "@/components/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,6 +28,15 @@ export const Route = createFileRoute("/jobs")({
 });
 
 type CategoryFilter = "All Roles" | JobCategory;
+
+const sectorCategories = [
+  "Warehouse & Logistics",
+  "Manufacturing & Factory",
+  "Construction & Trades",
+  "Hospitality & Food",
+  "Seasonal Agriculture",
+  "Technical & Drivers",
+] as const;
 
 function Jobs() {
   const [query, setQuery] = useState("");
@@ -65,7 +75,30 @@ function Jobs() {
           <span className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-royal">View Services <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
         </Link>
 
-        <div className="mt-8 card-brand p-5 sm:p-6">
+        <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4" aria-label="Browse jobs by industry">
+          {sectorCategories.map((item) => {
+            const count = jobVacancies.filter((job) => job.category === item).length;
+            const selected = category === item;
+            return (
+              <button
+                key={item}
+                type="button"
+                aria-pressed={selected}
+                aria-label={`Filter by ${item}, ${count} roles`}
+                onClick={() => setCategory(item)}
+                className={`card-brand group flex min-w-0 flex-col items-start gap-4 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-royal sm:p-5 ${selected ? "border-primary ring-2 ring-primary/10" : ""}`}
+              >
+                <div className="flex w-full items-start justify-between gap-2">
+                  <JobCategoryIcon category={item} shape="circle" />
+                  <span className="rounded-full bg-surface px-2.5 py-1 text-xs font-bold text-royal">{count} roles</span>
+                </div>
+                <span className="font-display text-sm font-bold leading-snug text-navy sm:text-base">{item}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-6 card-brand p-5 sm:p-6">
           <label htmlFor="job-search" className="text-sm font-semibold text-navy">Search job vacancies</label>
           <div className="relative mt-2">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
@@ -122,7 +155,10 @@ function Jobs() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {recruitmentRegions.map((region) => (
               <article key={region.name} className="card-brand p-5 sm:p-6">
-                <h3 className="text-lg font-bold text-royal">{region.name}</h3>
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-royal/10 text-royal" aria-hidden="true"><Globe2 className="h-4 w-4" /></span>
+                  <h3 className="text-lg font-bold text-royal">{region.name}</h3>
+                </div>
                 <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${region.name} countries`}>
                   {region.countries.map((country) => (
                     <li key={country} className="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-semibold text-navy">{country}</li>
