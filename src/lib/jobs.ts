@@ -229,7 +229,7 @@ export const jobVacancies = [
     id: "heavy-truck-driver-ce",
     title: "Heavy Truck Driver (CE License)",
     category: "Technical & Drivers",
-    hours: workweek("Planned driving rotations respect tachograph and rest rules, with additional lawful assignments depending on routes and schedules."),
+    hours: workweek("Planned driving rotations respect tachograph and rest rules, with regulated overtime only within lawful driving and rest limits."),
     experience: "Valid CE license, driver qualification card where applicable, digital tachograph knowledge, and usually 1–3 years of international or heavy-vehicle experience.",
     benefits: "Housing or layover support, employer insurance arrangements, vehicle safety equipment, route induction, and travel coordination where offered.",
     destinations: ["Poland", "Czech Republic", "Slovakia", "Germany", "Serbia"],
@@ -439,7 +439,7 @@ export const jobVacancies = [
     hours: workweek("Fieldwork shifts follow daylight, weather, and crop cycles, with regulated seasonal overtime for planting or harvest operations."),
     experience: "Tractor or farm machinery experience and a suitable license are preferred; general farm-hand applicants need fitness, basic English, and safety awareness.",
     benefits: "Seasonal farm accommodation, insurance, machinery and field PPE, operator induction, and local transport support depending on the farm.",
-    destinations: ["Poland", "Czech Republic", "Slovakia", "Germany", "Greece", "Spain"],
+    destinations: ["Poland", "Czech Republic", "Slovakia", "Germany", "Greece", "Spain", "Albania"],
   },
   {
     id: "sawmill-timber-processing-worker",
