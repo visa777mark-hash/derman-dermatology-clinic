@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter } from "../components/site";
+import { employmentAgencySchema } from "../lib/geo-content";
 
 function NotFoundComponent() {
   return (
@@ -95,24 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "EmploymentAgency",
-          name: "DERMAN Immigration & Visa Support Center",
-          url: "https://hrderman.com",
-          foundingDate: "2010",
-          description: "International recruitment and European work permit coordination for applicants and employer partners.",
-          areaServed: "Europe",
-          location: [
-            {
-              "@type": "Place",
-              name: "DERMAN Bielefeld Coordination Center",
-              address: { "@type": "PostalAddress", addressLocality: "Bielefeld", addressCountry: "DE" },
-            },
-            {
-              "@type": "Place",
-              name: "DERMAN Kyiv Coordination Center",
-              address: { "@type": "PostalAddress", addressLocality: "Kyiv", addressCountry: "UA" },
-            },
-          ],
+          "@graph": [employmentAgencySchema],
         }),
       },
     ],

@@ -4,6 +4,7 @@ import hero from "@/assets/hero-europe.jpg";
 import { WaButton, SubNav, SectionTitle } from "@/components/site";
 import { DestinationCard } from '@/components/destination-card';
 import { destinations } from '@/lib/destinations';
+import { WorkFaqSection } from "@/components/work-faq-section";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -90,6 +91,8 @@ function Index() {
           <div className="mt-10 text-center"><WaButton size="lg">SUBMIT A REQUEST VIA WHATSAPP</WaButton></div>
         </div>
       </section>
+
+      <WorkFaqSection />
     </>
   );
 }

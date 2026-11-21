@@ -34,3 +34,8 @@
 - [x] Add six clickable industry cards with distinct icons and accurate role counts above search.
 - [x] Add sector badges, country previews, and View Brief pills to all fifty accordion rows plus regional icons.
 - [x] Verify all filtering and accordion behavior, desktop/mobile layouts, existing tests, and build without changing job data or SEO copy; twenty-four tests passed with no browser errors or overflow.
+
+# Google AI search visibility
+- [x] Add the five-country work permit and vacancy overview table to Jobs.
+- [x] Add the four supplied FAQs near the bottom of Homepage and Jobs, with agency structured data.
+- [x] Verify visible content, metadata, desktop/mobile layouts, tests, and production build without changing existing job data or styling; twenty-eight tests passed with valid JSON-LD, no browser errors, and no page overflow.

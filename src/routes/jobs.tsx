@@ -6,6 +6,8 @@ import { JobCategoryIcon } from "@/components/job-category-icon";
 import { PageHero, SectionTitle } from "@/components/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { WorkFaqSection } from "@/components/work-faq-section";
+import { WorkPermitOverview } from "@/components/work-permit-overview";
 import { jobCategories, jobVacancies, recruitmentRegions, type JobCategory } from "@/lib/jobs";
 
 const title = "Europe Job Vacancies & Work Permit Roles | DERMAN Recruitment";
@@ -169,6 +171,9 @@ function Jobs() {
           </div>
         </div>
       </section>
+
+      <WorkPermitOverview />
+      <WorkFaqSection />
     </>
   );
 }
